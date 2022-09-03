@@ -27,9 +27,77 @@
   }
 
   html {
-    box-sizing: border-box;
+    box-sizing: border-box; /* чтобы не изменялись размеры боксов из-за padding */
   }
 
   *, *::before, *::after {
     box-sizing: inherit;
   }
+
+  body { /* чтобы, если что-то добавлялось, то было в стиле сайта (в основном щрифт) */
+    font-family: 'Lato';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: black;
+  }
+
+.wrapper {
+    max-width: 1060px; /* максимальная ширина */
+    margin: 0 auto; /* выровнять по центру */
+}
+
+/* Header styles start */
+
+.header {
+    position: fixed; /* чтобы меню было зафиксировано */
+    top: 0; /* прибиваем меню к верхней части экрана */
+    left: 0; /* выравнивание по левой части экрана */
+    width: 100%; /* чтобы всегда занимал 100% ширины экрана */
+}
+
+.header__wrapper {
+    display: flex;
+    flex-wrap: wrap; /* перенос контента, чтобы они не наезжали друг на друга */
+    align-items: flex-end; /* вертикальное выравнивание по низу */
+    justify-content: space-between; /* выравнивание контента по краям контейнера (блока) */
+    padding-top: 56px; 
+}
+
+.header__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header__item {
+    margin-right: 82px; /* расстояние между элементами меню */
+}
+
+.header__item:last-child {
+    margin-right: 0; /* чтобы у последнего элемента не было margin */
+}
+
+.header__link {
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+    text-decoration: none; /* чтобы ссылка не подчёркивалась */
+}
+
+.header__link:hover, .header__link:focus, .header__link:active { /* наведение, фокус (tab) и нажатие */
+    opacity: 75%; /* непрозрачность 75% */
+}
+ 
+/* Header styles end */
+
+/* Intro styles start */
+
+.intro {
+    height: 100vh; /* высота равная 100% высоты экрана */
+    background: url(../img/intro-bg.jpg) no-repeat center; /* чтобы картинка не повторялась и была по центру */
+    background-size: cover; /* картинка полностью покрывает блок при его любых размерах */
+}
+
+ /* Intro styles end */
+
