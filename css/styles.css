@@ -43,6 +43,11 @@
     color: black;
   }
 
+  img {
+    max-width: 100%; /* чтобы изображение никогда не превышало размеры контейнера, в котором находится */
+    height: auto; /* чтобы сжималось пропорционально высоте */
+  }
+
 .wrapper {
     max-width: 1060px; /* максимальная ширина */
     margin: 0 auto; /* выровнять по центру */
@@ -160,7 +165,12 @@
 
 /* Benefits styles start */
 
+.benefits {
+    margin-bottom: 131px;
+}
+
 .benefits__wrapper {
+    position: relative; /* для того, чтобы для .benefits__title сделать position: absolute; */
     max-width: 1262px;
     background-color: white;
     margin: 0 auto;
@@ -168,14 +178,66 @@
 }
 
 .benefits__title {
+    position: absolute;
+    width: 100%;
+    top: 0; /* выравнивание по верхнему краю */
+    left: 0; /* выравниваю по левому краю */
     font-weight: 500;
     font-size: 35px;
     line-height: 42px;
     padding: 93px 100px 88px 100px; /* сверху, справа, снизу и слева */
+    transform: translateY(-100%); /* сдвигаем элемент по оси Y на 100% его высоты вверх */
+    background-color: white;
 }
 
 .benefits__cards {
-    height: 30vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* три карточки с размерами 1fr */
+    column-gap: 55px; /* расстояние между карточками */
+    padding: 0 100px; /* отступ 0 сверху, снизу и 100px слева, справа */
+}
+
+.benefits__card {
+    grid-column: span 1; /* одна карточка занимает одну колонку */
+    margin-bottom: 112px;
+}
+
+.benefits__card-pic {
+    max-width: 66px;
+    margin-bottom: 37px; /* отступ от элемента, который внизу */
+}
+
+.benefits__card-thumb {
+    display: block;
+}
+
+.benefits__card-title {
+    margin-bottom: 26px; /* отступ от элемента, который внизу */
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.benefits__card-descr {
+    margin-bottom: 39px; /* отступ от элемента, который внизу */ 
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.benefits__card-more {
+    display: inline-block; /* чтобы добавить элемент сбоку */
+    padding-right: 59px; /* размер стрелки + расстояние между текстом и стрелкой */
+    font-size: 16px;
+    line-height: 24px;
+    color: #006DFE;
+    text-decoration: none; /* чтобы убрать нижнее подчёркивание */
+    background: url(../img/svg/arrow.svg) no-repeat 95% center; /* добавляем стрелку, чтобы не повторялась и выравнивалась справа на 95% и по центру */
+    transform: .2s all; /* чтобы эффект происходил за 2 сек */
+}
+
+.benefits__card-more:hover, .benefits__card-more:focus {
+    background: url(../img/svg/arrow.svg) no-repeat right center; /* чтобы при наведении и выделении стрелка уходила вправо на 100% */
 }
 
 
