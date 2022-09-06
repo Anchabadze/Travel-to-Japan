@@ -53,6 +53,31 @@
     margin: 0 auto; /* выровнять по центру */
 }
 
+.wrapper-full {
+    max-width: 1262px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    display: block;
+    content: '';
+    width: 253px;
+    height: 3px;
+    background-color: #006DFE;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+}
+
 /* Header styles start */
 
 .header {
@@ -91,7 +116,7 @@
 }
 
 .header__link:hover, .header__link:focus, .header__link:active { /* наведение, фокус (tab) и нажатие */
-    opacity: 75%; /* непрозрачность 75% */
+    opacity: 75%; /* прозрачность 75% */
 }
  
 /* Header styles end */
@@ -240,7 +265,36 @@
     background: url(../img/svg/arrow.svg) no-repeat right center; /* чтобы при наведении и выделении стрелка уходила вправо на 100% */
 }
 
-
-
 /* Benefits styles end */
+
+/* Places styles start */
+
+
+.places_caption {
+    margin-bottom: 36px; 
+    display: flex; /* чтобы элементы расположились на одной линии */
+    flex-wrap: wrap;
+    align-items: center; /* выравнивание по вертикали */
+    justify-content: space-between; /* чтобы элементы прибились к разным концам блока */
+}
+
+.places__title {
+    margin-right: 15px;
+}
+
+.places__view-all {
+    padding-right: 59px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #006DFE;
+    text-decoration: none;
+    background: url(../img/svg/arrow.svg) no-repeat right center;
+}
+
+.places__view-all:hover, .places__view-all:focus {
+    opacity: 65%;
+}
+
+/* Places styles end */
 
