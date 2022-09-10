@@ -128,6 +128,7 @@
     background: url(../img/intro-bg.jpg) no-repeat center; /* чтобы картинка не повторялась и была по центру */
     background-size: cover; /* картинка полностью покрывает блок при его любых размерах */
     padding-top: 263px;
+    padding-bottom: 350px;
 }
 
 .intro__title {
@@ -269,6 +270,9 @@
 
 /* Places styles start */
 
+.places {
+    margin-bottom: 131px; /* создаём отступы через mb */
+}
 
 .places_caption {
     margin-bottom: 36px; 
@@ -335,15 +339,28 @@
     z-index: 5;
 }
 
-.places__card_size-lg {
+.places__card_size_lg {
     grid-column: span 3; /* занимает три колонки */
+}
+
+.places__card_size_sm {
+    grid-column: span 2; /* занимает две колонки */
+    margin-top: 10px;
 }
 
 .places__card-pic {
     width: 100%;
+    transition: .15s all; /* время, за которое происходит эффект */
+}
+
+.places__card-pic_size_lg {
     height: 354px;
     object-fit: cover; /* как изображение будет масштабироваться внутри контейнера */
-    transition: .15s; /* время, за которое происходит эффект */
+}
+
+.places__card-pic_size_sm {
+    height: 283px;
+    object-fit: cover; /* как изображение будет масштабироваться внутри контейнера */
 }
 
 .places__card-link { /* сделали ссылку на всю площадь картинки */
