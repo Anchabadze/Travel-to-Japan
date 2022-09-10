@@ -376,7 +376,48 @@
 
 /* Tours styles start */
 
+.tours {
+    margin-bottom: 139px; /* отступ секции снизу */
+}
 
+.tours__tour {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 108px; /* отсупа снизу нет, а по бокам 108px */
+    align-items: center; /* выравнивание по центру контейнера */
+    margin-bottom: 77px;
+}
 
+.tour__info {
+    padding-left: 47px;
+}
+
+.tour__title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 85px;
+}
+
+.tour__descr {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 58px;
+}
+
+.tour__more {
+    display: inline-block; /* чтобы добавить элемент сбоку */
+    padding-right: 59px; /* размер стрелки + расстояние между текстом и стрелкой */
+    font-size: 16px;
+    line-height: 24px;
+    color: #006DFE;
+    text-decoration: none; /* чтобы убрать нижнее подчёркивание */
+    background: url(../img/svg/arrow.svg) no-repeat 95% center; /* добавляем стрелку, чтобы не повторялась и выравнивалась справа на 95% и по центру */
+}
+
+.tour__more:hover, .tour__more:focus {
+    opacity: 65%;
+}
 
 /* Tours styles end */
