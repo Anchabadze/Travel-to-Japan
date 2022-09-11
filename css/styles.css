@@ -85,6 +85,13 @@
     top: 0; /* прибиваем меню к верхней части экрана */
     left: 0; /* выравнивание по левой части экрана */
     width: 100%; /* чтобы всегда занимал 100% ширины экрана */
+    transition: .2s linear;
+    padding-bottom: 20px;
+    z-index: 999;
+}
+
+.header_active {
+    background: #0E1D28;
 }
 
 .header__wrapper {
