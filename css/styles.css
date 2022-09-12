@@ -625,6 +625,12 @@
 
 /* Media start */
 
+@media screen and (max-width: 922px) {
+    
+
+
+}
+
 @media screen and (max-width: 819px) {
     .header__burger {
         display: block;
