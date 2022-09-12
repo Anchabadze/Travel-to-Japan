@@ -765,4 +765,18 @@
     }
 }
 
+@media screen and (max-width: 320px) {
+
+    .search-form__field {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .benefits__card {
+        grid-column: span 3;
+    }
+
+
+}
+
 /* Media end */
