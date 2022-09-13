@@ -163,7 +163,7 @@
 
 .intro {
     min-height: 100vh; /* высота равная 100% высоты экрана */
-    background: url(../img/intro-bg.jpg) no-repeat center; /* чтобы картинка не повторялась и была по центру */
+    background: url(../img/intro-bg-min.jpg) no-repeat center; /* чтобы картинка не повторялась и была по центру */
     background-size: cover; /* картинка полностью покрывает блок при его любых размерах */
     padding-top: 263px;
     padding-bottom: 350px;
