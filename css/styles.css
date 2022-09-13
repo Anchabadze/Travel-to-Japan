@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* lato-regular - latin */
 @font-face {
     font-family: 'Lato';
@@ -27,11 +34,13 @@
   }
 
   html {
-    box-sizing: border-box; /* чтобы не изменялись размеры боксов из-за padding */
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; /* чтобы не изменялись размеры боксов из-за padding */
   }
 
   *, *::before, *::after {
-    box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
   }
 
   body { /* чтобы, если что-то добавлялось, то было в стиле сайта (в основном щрифт) */
@@ -87,6 +96,8 @@
     top: 0; /* прибиваем меню к верхней части экрана */
     left: 0; /* выравнивание по левой части экрана */
     width: 100%; /* чтобы всегда занимал 100% ширины экрана */
+    -webkit-transition: .2s linear;
+    -o-transition: .2s linear;
     transition: .2s linear;
     padding-bottom: 20px;
     z-index: 999;
@@ -97,16 +108,26 @@
 }
 
 .header__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap; /* перенос контента, чтобы они не наезжали друг на друга */
-    align-items: flex-end; /* вертикальное выравнивание по низу */
-    justify-content: space-between; /* выравнивание контента по краям контейнера (блока) */
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; /* перенос контента, чтобы они не наезжали друг на друга */
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end; /* вертикальное выравнивание по низу */
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; /* выравнивание контента по краям контейнера (блока) */
     padding-top: 56px; 
 }
 
 .header__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .header__item {
@@ -150,7 +171,9 @@
 
 .burger__line_second {
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
 }
 
 .burger__line_third {
@@ -187,8 +210,11 @@
 }
 
 .search-form__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .search-form__field {
@@ -200,6 +226,30 @@
     margin-right: 60px;
     padding-left: 43px;
     padding-bottom: 22px;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+
+.search-form__field::-webkit-input-placeholder {
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+
+.search-form__field::-moz-placeholder {
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+
+.search-form__field:-ms-input-placeholder {
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+
+.search-form__field::-ms-input-placeholder {
     font-weight: 500;
     font-size: 18px;
     color: white;
@@ -238,7 +288,8 @@
     max-width: 1262px;
     background-color: white;
     margin: 0 auto;
-    box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+    -webkit-box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+            box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
 }
 
 .benefits__title {
@@ -250,18 +301,25 @@
     font-size: 35px;
     line-height: 42px;
     padding: 93px 100px 88px 100px; /* сверху, справа, снизу и слева */
-    transform: translateY(-100%); /* сдвигаем элемент по оси Y на 100% его высоты вверх */
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%); /* сдвигаем элемент по оси Y на 100% его высоты вверх */
     background-color: white;
 }
 
 .benefits__cards {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 55px 1fr 55px 1fr;
     grid-template-columns: repeat(3, 1fr); /* три карточки с размерами 1fr */
-    column-gap: 55px; /* расстояние между карточками */
+    -webkit-column-gap: 55px;
+       -moz-column-gap: 55px;
+            column-gap: 55px; /* расстояние между карточками */
     padding: 0 100px; /* отступ 0 сверху, снизу и 100px слева, справа */
 }
 
 .benefits__card {
+    -ms-grid-column-span: 1;
     grid-column: span 1; /* одна карточка занимает одну колонку */
     margin-bottom: 112px;
 }
@@ -297,7 +355,9 @@
     color: #006DFE;
     text-decoration: none; /* чтобы убрать нижнее подчёркивание */
     background: url(../img/svg/arrow.svg) no-repeat 95% center; /* добавляем стрелку, чтобы не повторялась и выравнивалась справа на 95% и по центру */
-    transform: .2s all; /* чтобы эффект происходил за 2 сек */
+    -webkit-transform: .2s all;
+        -ms-transform: .2s all;
+            transform: .2s all; /* чтобы эффект происходил за 2 сек */
 }
 
 .benefits__card-more:hover, .benefits__card-more:focus {
@@ -314,10 +374,17 @@
 
 .places_caption {
     margin-bottom: 36px; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex; /* чтобы элементы расположились на одной линии */
-    flex-wrap: wrap;
-    align-items: center; /* выравнивание по вертикали */
-    justify-content: space-between; /* чтобы элементы прибились к разным концам блока */
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; /* выравнивание по вертикали */
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; /* чтобы элементы прибились к разным концам блока */
 }
 
 .places__title {
@@ -339,9 +406,13 @@
 }
 
 .places__cards {
+    display: -ms-grid;
     display: grid; 
+    -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr; 
     grid-template-columns: repeat(6, 1fr); /* разметим блок на 6 колонок */
-    column-gap: 10px; /* расстояние между колонками по горизонтале внутри блока */
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px; /* расстояние между колонками по горизонтале внутри блока */
     row-gap: 10px; /* расстояние между колонками по вертикале внутри блока */
     overflow: hidden;
 }
@@ -352,7 +423,9 @@
 }
 
 .places__card:hover .places__card-pic {
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 
 .places__card::after {
@@ -379,26 +452,32 @@
 }
 
 .places__card_size_lg {
+    -ms-grid-column-span: 3;
     grid-column: span 3; /* занимает три колонки */
 }
 
 .places__card_size_sm {
+    -ms-grid-column-span: 2;
     grid-column: span 2; /* занимает две колонки */
 }
 
 .places__card-pic {
     width: 100%;
+    -webkit-transition: .15s all;
+    -o-transition: .15s all;
     transition: .15s all; /* время, за которое происходит эффект */
 }
 
 .places__card-pic_size_lg {
     height: 354px;
-    object-fit: cover; /* как изображение будет масштабироваться внутри контейнера */
+    -o-object-fit: cover;
+       object-fit: cover; /* как изображение будет масштабироваться внутри контейнера */
 }
 
 .places__card-pic_size_sm {
     height: 283px;
-    object-fit: cover; /* как изображение будет масштабироваться внутри контейнера */
+    -o-object-fit: cover;
+       object-fit: cover; /* как изображение будет масштабироваться внутри контейнера */
 }
 
 .places__card-link { /* сделали ссылку на всю площадь картинки */
@@ -419,10 +498,16 @@
 }
 
 .tours__tour {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 108px 1fr;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 108px; /* отсупа снизу нет, а по бокам 108px */
-    align-items: center; /* выравнивание по центру контейнера */
+    -webkit-column-gap: 108px;
+       -moz-column-gap: 108px;
+            column-gap: 108px; /* отсупа снизу нет, а по бокам 108px */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; /* выравнивание по центру контейнера */
     margin-bottom: 77px;
 }
 
@@ -471,9 +556,13 @@
 }
 
 .top__cards {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 57px 1fr 57px 1fr 57px 1fr 57px 1fr 57px 1fr;
     grid-template-columns: repeat(6, 1fr);
-    column-gap: 57px;
+    -webkit-column-gap: 57px;
+       -moz-column-gap: 57px;
+            column-gap: 57px;
     row-gap: 58px;
 }
 
@@ -483,16 +572,29 @@
 }
 
 .top__card {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-grid-column-span: 2;
     grid-column: span 2;
 }
 
 .top__card-stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -588,8 +690,11 @@
 }
 
 .footer__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .footer__logo {
@@ -597,9 +702,14 @@
 }
 
 .footer__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 50%;
 }
 
@@ -642,7 +752,9 @@
 
     .benefits__cards {
         padding: 0 15px; /* отступы сверху, снизу и отступы слева, справа */
-        column-gap: 35px;
+        -webkit-column-gap: 35px;
+           -moz-column-gap: 35px;
+                column-gap: 35px;
     }
 
     .benefits__title {
@@ -650,19 +762,24 @@
     }
 
     .benefits__wrap {
-        box-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
     }
 
     .places__card_size_lg {
+        -ms-grid-column-span: 6;
         grid-column: span 6;
     }
 
     .places__card_size_sm {
+        -ms-grid-column-span: 6;
         grid-column: span 6;
     }
 
     .tours__tour {
-        column-gap: 35px;
+        -webkit-column-gap: 35px;
+           -moz-column-gap: 35px;
+                column-gap: 35px;
     }
 
     .tours__info {
@@ -682,11 +799,14 @@
     }
 
     .top__cards {
-        column-gap: 30px;
+        -webkit-column-gap: 30px;
+           -moz-column-gap: 30px;
+                column-gap: 30px;
         row-gap: 30px;
     }
 
     .top__card {
+        -ms-grid-column-span: 3;
         grid-column: span 3;
     }
 
@@ -715,12 +835,18 @@
         background-color: #000;
         z-index: 10;
         padding: 75px;
-        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+                transform: translateX(100%);
+        -webkit-transition: .2s all linear;
+        -o-transition: .2s all linear;
         transition: .2s all linear;
     }
 
     .header__nav_active {
-        transform: translateX(0); 
+        -webkit-transform: translateX(0);
+            -ms-transform: translateX(0);
+                transform: translateX(0); 
     }
 
     .header__item {
@@ -757,11 +883,15 @@
     }
 
     .header__nav-close-line:first-child {
-        transform: translateY(-50%) rotate(45deg);
+        -webkit-transform: translateY(-50%) rotate(45deg);
+            -ms-transform: translateY(-50%) rotate(45deg);
+                transform: translateY(-50%) rotate(45deg);
     }
 
     .header__nav-close-line:last-child {
-        transform: translateY(-50%) rotate(-45deg);
+        -webkit-transform: translateY(-50%) rotate(-45deg);
+            -ms-transform: translateY(-50%) rotate(-45deg);
+                transform: translateY(-50%) rotate(-45deg);
     }
 }
 
@@ -795,6 +925,22 @@
         background: transparent url(../img/svg/circle-icon.svg) no-repeat left 2px;
     }
 
+    .search-form__field::-webkit-input-placeholder {
+        font-size: 16px;
+    }
+
+    .search-form__field::-moz-placeholder {
+        font-size: 16px;
+    }
+
+    .search-form__field:-ms-input-placeholder {
+        font-size: 16px;
+    }
+
+    .search-form__field::-ms-input-placeholder {
+        font-size: 16px;
+    }
+
     .search-form__field::placeholder {
         font-size: 16px;
     }
@@ -808,6 +954,7 @@
     }
 
     .benefits__card {
+        -ms-grid-column-span: 3;
         grid-column: span 3;
         margin-bottom: 30px;
     }
@@ -849,6 +996,7 @@
     }
 
     .tour__pic, .tour__info {
+        -ms-grid-column-span: 2;
         grid-column: span 2;
     }
 
@@ -857,10 +1005,12 @@
     }
 
     .tour__pic_mob-first {
-        grid-row-start: -1;
+        grid-row: -1;
+            grid-row-start: -1;
     }
 
     .top__card {
+        -ms-grid-column-span: 6;
         grid-column: span 6;
     }
 
